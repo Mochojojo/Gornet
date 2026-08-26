@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gorn.net</title>
+
+    <style>
+        a {
+            color:cyan;
+            text-decoration: none;
+         }
+         
+
+        a:visited {
+            color: cyan;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        h1 {
+    font-family: 'Times New Roman';
+    animation: crecer 1.5s ease-in-out infinite;
+}
+
+@keyframes crecer {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+       .marquee {
+    width: 100%;
+    overflow: hidden;
+    height: 300px;
+}
+
+.marquee-contenido {
+    display: inline-flex;
+    animation: mover 15s linear infinite;
+}
+
+.marquee-contenido img {
+    width: 10vw;
+    margin-right: 10px;
+}
+
+@keyframes mover {
+    0% {
+        transform: translate(-100vw, 0);
+    }
+
+    12.5% {
+        transform: translate(-75vw, -50px);
+    }
+
+    25% {
+        transform: translate(-50vw, 0);
+    }
+
+    37.5% {
+        transform: translate(-25vw, 50px);
+    }
+
+    50% {
+        transform: translate(0, 0);
+    }
+
+    62.5% {
+        transform: translate(25vw, -50px);
+    }
+
+    75% {
+        transform: translate(50vw, 0);
+    }
+
+    87.5% {
+        transform: translate(75vw, 50px);
+    }
+
+    100% {
+        transform: translate(100vw, 0);
+    }
+}
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Gorn.net</h1>
+    <hr></hr>
+    <marquee scrollamount="35"><h2><a href="https://umamusume.com/" target="_blank">click aqui</a></h2></marquee>
+
+    <h3>Ingresa tu edad</h3>
+    <input type="text">
+    <button>Guardar</button>
+    <div></div>
+
+    <marquee scrollamount="35"><h2><a>bienvenido!</a></h2></marquee>
+
+    <div class="marquee-contenido">
+        <img src="img/teach.jpg">
+        <img src="img/esponja bob.jpeg">
+        <img src="img/Tux Penguin.jpg">
+
+        <img src="img/teach.jpg">
+        <img src="img/esponja bob.jpeg">
+        <img src="img/Tux Penguin.jpg">
+
+        <img src="img/teach.jpg">
+        <img src="img/esponja bob.jpeg">
+        <img src="img/Tux Penguin.jpg">
+    </div>
+</div>
+    
+    
+</body>
+
+<script>
+    const colores = ["red", "cyan", "deeppink", "mediumspringgreen", "yellow"];
+
+    let i = 0;
+
+    setInterval(() => {
+        document.body.style.backgroundColor = colores[i];
+        i = (i + 1) % colores.length;
+    }, 300);
+
+    const marquee = document.querySelector(".marquee-contenido");
+
+let x = -window.innerWidth;
+let tiempo = 1;
+
+function animar() {
+    x += 2;
+
+    // Amplitud de la onda
+    const amplitud = 2;
+
+    // Frecuencia de la onda
+    const frecuencia = 0.1;
+
+    const y = Math.sin(tiempo * frecuencia) * amplitud;
+
+    marquee.style.transform = `translate(${x}px, ${y}px)`;
+
+    tiempo++;
+
+    if (x > window.innerWidth) {
+        x = -marquee.offsetWidth;
+    }
+
+    requestAnimationFrame(animar);
+}
+
+animar();
+</script>
+</html> 
