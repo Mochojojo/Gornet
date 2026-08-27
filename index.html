@@ -4,97 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gorn.net</title>
-
-    <style>
-        a {
-            color:cyan;
-            text-decoration: none;
-         }
-         
-
-        a:visited {
-            color: cyan;
-        }
-
-        a:hover {
-            color: white;
-        }
-
-        h1 {
-    font-family: 'Times New Roman';
-    animation: crecer 1.5s ease-in-out infinite;
-}
-
-@keyframes crecer {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.5);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-       .marquee {
-    width: 100%;
-    overflow: hidden;
-    height: 300px;
-}
-
-.marquee-contenido {
-    display: inline-flex;
-    animation: mover 15s linear infinite;
-}
-
-.marquee-contenido img {
-    width: 10vw;
-    margin-right: 10px;
-}
-
-@keyframes mover {
-    0% {
-        transform: translate(-100vw, 0);
-    }
-
-    12.5% {
-        transform: translate(-75vw, -50px);
-    }
-
-    25% {
-        transform: translate(-50vw, 0);
-    }
-
-    37.5% {
-        transform: translate(-25vw, 50px);
-    }
-
-    50% {
-        transform: translate(0, 0);
-    }
-
-    62.5% {
-        transform: translate(25vw, -50px);
-    }
-
-    75% {
-        transform: translate(50vw, 0);
-    }
-
-    87.5% {
-        transform: translate(75vw, 50px);
-    }
-
-    100% {
-        transform: translate(100vw, 0);
-    }
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <p>X:</p>
+    <p>Y:</p>
     <h1 style="text-align: center;">Gorn.net</h1>
     <hr></hr>
     <marquee scrollamount="35"><h2><a href="https://umamusume.com/" target="_blank">click aqui</a></h2></marquee>
@@ -125,6 +39,8 @@
 </body>
 
 <script>
+    
+
     const colores = ["red", "cyan", "deeppink", "mediumspringgreen", "yellow"];
 
     let i = 0;
