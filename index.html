@@ -1,82 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gorn.net</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <p>X:</p>
     <p>Y:</p>
-    <h1 style="text-align: center;">Gorn.net</h1>
-    <hr></hr>
-    <marquee scrollamount="35"><h2><a href="https://umamusume.com/" target="_blank">click aqui</a></h2></marquee>
+    <h1 style="text-align: center">Gorn.net</h1>
+    <hr />
+    <marquee scrollamount="35">
+      <h2><a href="https://umamusume.com/" target="_blank">click aqui</a></h2>
+    </marquee>
 
     <h3>Ingresa tu edad</h3>
-    <input type="text">
+    <input type="text" />
     <button>Guardar</button>
     <div></div>
 
-    <marquee scrollamount="35"><h2><a>bienvenido!</a></h2></marquee>
+    <marquee scrollamount="35">
+      <h2><a>bienvenido!</a></h2>
+    </marquee>
 
     <div class="marquee-contenido">
-        <img src="img/teach.jpg">
-        <img src="img/esponja bob.jpeg">
-        <img src="img/Tux Penguin.jpg">
+      <img src="img/teach.jpg" />
+      <img src="img/esponja bob.jpeg" />
+      <img src="img/Tux Penguin.jpg" />
 
-        <img src="img/teach.jpg">
-        <img src="img/esponja bob.jpeg">
-        <img src="img/Tux Penguin.jpg">
+      <img src="img/teach.jpg" />
+      <img src="img/esponja bob.jpeg" />
+      <img src="img/Tux Penguin.jpg" />
 
-        <img src="img/teach.jpg">
-        <img src="img/esponja bob.jpeg">
-        <img src="img/Tux Penguin.jpg">
+      <img src="img/teach.jpg" />
+      <img src="img/esponja bob.jpeg" />
+      <img src="img/Tux Penguin.jpg" />
     </div>
-</div>
-    
-    
-</body>
+  </body>
 
-<script>
-    
-
+  <script>
     const colores = ["red", "cyan", "deeppink", "mediumspringgreen", "yellow"];
 
     let i = 0;
 
     setInterval(() => {
-        document.body.style.backgroundColor = colores[i];
-        i = (i + 1) % colores.length;
+      document.body.style.backgroundColor = colores[i];
+      i = (i + 1) % colores.length;
     }, 300);
 
     const marquee = document.querySelector(".marquee-contenido");
 
-let x = -window.innerWidth;
-let tiempo = 1;
+    let x = -window.innerWidth;
+    let tiempo = 1;
 
-function animar() {
-    x += 2;
+    function animar() {
+      x += 2;
 
-    // Amplitud de la onda
-    const amplitud = 2;
+      // Amplitud de la onda
+      const amplitud = 2;
 
-    // Frecuencia de la onda
-    const frecuencia = 0.1;
+      // Frecuencia de la onda
+      const frecuencia = 0.1;
 
-    const y = Math.sin(tiempo * frecuencia) * amplitud;
+      const y = Math.sin(tiempo * frecuencia) * amplitud;
 
-    marquee.style.transform = `translate(${x}px, ${y}px)`;
+      marquee.style.transform = `translate(${x}px, ${y}px)`;
 
-    tiempo++;
+      tiempo++;
 
-    if (x > window.innerWidth) {
+      if (x > window.innerWidth) {
         x = -marquee.offsetWidth;
+      }
+
+      requestAnimationFrame(animar);
     }
 
-    requestAnimationFrame(animar);
-}
-
-animar();
-</script>
-</html> 
+    animar();
+  </script>
+</html>
