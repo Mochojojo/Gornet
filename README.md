@@ -1,2 +1,2 @@
 # Gorn.net
-Repositorio oficial de Gorn.net
+Repositorio oficial de Gornet
